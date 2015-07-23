@@ -43,11 +43,11 @@ contents of the following gist, and save:
         console.log('received a message: ', e.origin);
         console.log('data: ', e.data);
 
-        if (e.origin === 'https://stomlinson.dev.lcip.org') {
+        if (e.origin === 'https://accounts.stage.mozaws.net') {
             var data = JSON.parse(e.data);
             switch (data.command) {
                 case 'ping':
-                    fxaFrameTarget.postMessage(e.data, 'https://stomlinson.dev.lcip.org');
+                    fxaFrameTarget.postMessage(e.data, 'https://accounts.stage.mozaws.net');
                     break;
                 case 'resize':
                     clearTimeout(resizeTimer);
@@ -93,6 +93,7 @@ contents of the following gist, and save:
         });
 
         $video.on('play', function() {
+            console.log('playing video');
             // GA track video play
             window.dataLayer.push({
                 'event': 'firstrun-40.0-video',
@@ -100,6 +101,7 @@ contents of the following gist, and save:
                 'videoTitle': 'When its Personal Campaign Video'
             });
         }).on('ended', function() {
+            console.log('ending video');
             // GA track video finish
             window.dataLayer.push({
                 'event': 'firstrun-40.0-video',

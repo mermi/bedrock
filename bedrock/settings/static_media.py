@@ -1194,7 +1194,6 @@ PIPELINE_JS = {
     'firefox_fx40_firstrun': {
         'source_filenames': (
             'js/base/mozilla-video-tools.js',
-            'js/firefox/australis/australis-uitour.js',
             'js/base/mozilla-modal.js',
             'js/firefox/australis/fx40/firstrun.js',
         ),
